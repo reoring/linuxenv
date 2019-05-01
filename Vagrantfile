@@ -17,13 +17,13 @@ Vagrant.configure("2") do |config|
   config.vm.provider "vmware_desktop" do |v|
     v.gui = false
     v.vmx["displayname"] = "linuxenv"
-    v.vmx["memsize"] = "2048"
-    v.vmx["numvcpus"] = "4"
+    v.vmx["memsize"] = "4196"
+    v.vmx["numvcpus"] = "8"
     v.clone_directory = '~/vagrant'
   end
 
   config.vm.synced_folder "/Volumes/dev", "/Volumes/dev", type: "nfs"
-  config.vm.synced_folder "/Users/suin", "/Users/suin", type: "nfs"
+  config.vm.synced_folder "/Users/reoring", "/Users/reoring", type: "nfs"
 
   # SSH login as root by default
   config.vm.provision "shell", inline: <<-SHELL
